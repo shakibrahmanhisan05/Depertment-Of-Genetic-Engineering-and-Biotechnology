@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 50% 5%;
+    --foreground: 0 0% 100%;
+    --card: 225 50% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 225 50% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 190 100% 50%;
+    --primary-foreground: 225 50% 5%;
+    --secondary: 263 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 225 30% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 190 100% 50%;
+    --accent-foreground: 225 50% 5%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 225 30% 15%;
+    --input: 225 30% 15%;
+    --ring: 190 100% 50%;
+    --radius: 0.5rem;
+    --sidebar-background: 225 50% 5%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 225 50% 5%;
+    --sidebar-accent: 225 30% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 225 30% 15%;
+    --sidebar-ring: 190 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#0a0e1f] text-white antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+  }
+  
+  .glow-cyan {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.3);
+  }
+  
+  .btn-primary {
+    @apply relative px-8 py-4 border border-[#00d4ff] text-[#00d4ff] text-xs font-semibold uppercase tracking-[0.1em] transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-[#00d4ff] text-[#0a0e1f];
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 bg-[rgba(0,212,255,0.1)] text-white text-xs font-semibold uppercase tracking-[0.1em] transition-all duration-300;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-[rgba(0,212,255,0.2)];
+  }
+  
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-[#00d4ff];
+  }
+  
+  .card-glow {
+    @apply bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-lg transition-all duration-300;
+  }
+  
+  .card-glow:hover {
+    @apply border-[#00d4ff];
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+  }
+  
+  .nav-link {
+    @apply relative text-sm uppercase tracking-[0.1em] text-[#94a3b8] transition-colors duration-300;
+  }
+  
+  .nav-link:hover {
+    @apply text-[#00d4ff];
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute left-0 -bottom-1 w-0 h-[1px] bg-[#00d4ff] transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e1f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: white;
+}
